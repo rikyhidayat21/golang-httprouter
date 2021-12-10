@@ -54,3 +54,8 @@ Pattern               /src/*filepath
 /src/somefile         match
 /src/subdir/filepath  match
 
+Bagian 4. Serve File
+- Pada materi golang web, kita sudah pernah membahas tentang serve file
+- Pada router pun, mendukung serve static file menggunakan function ServeFiles(Path, FileSystem)
+- Dimana pada Path, kita harus menggunakan Catch All parameter
+- Sedangkan pada FileSystem kita bisa melakukan manual load dari folder atau menggunakan golang embed
