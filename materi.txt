@@ -21,3 +21,12 @@ Handle is a function that can be registered to a route to handle HTTP requests.
 Like http.HandlerFunc, but has a third parameter for the values of wildcards(variables)
 type Handle func(http.ResponseWriter, *http.Request, Params)
 [Note End]
+
+Bagian 2. Params
+- httprouter.Handle memiliki parameter yang ketiga yaitu Params. Untuk apa kegunaan params?
+- Params merupakan tempat untuk menyimpan parameter yang dikirim dari client
+- Namun params ini bukan query parameter, melainkan parameter di URL
+- Kadang kita butuh membuat URL yang tidak fix, alias bisa berubah-ubah, misal /products/1, /products/2, dst
+- ServeMux tidak mendukung hal tersebut, namun Router mendukung hal tersebut
+- Paramter yang dinamis yang terdapat di URL, secara otomatis dikumpulkan di Params
+- Namun, agar Router tahu, kita harus memberi tahu ketika menambahkan Route, dibagian mana kita akan buat URL Pathnya menjadi dinamis
