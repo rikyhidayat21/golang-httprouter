@@ -1,3 +1,23 @@
 go mod init github.com/rikyhidayat21/golang-httprouter
 go get github.com/julienschmidt/httprouter
 go get github.com/stretchr/testify
+
+Bagian 1. Router
+- Inti dari library HttpRouter adalah struct Router
+- Router ini merupakan implementasi dari http.Handler, sehingga kita bisa dengan mudah menambahkan ke dalam http.Server
+- Untuk membuat Router, kita bisa menggunakan function httprouter.New(), yang akan mengembalikan Router pointer
+
+HTTP Method
+- Router mirip dengan ServeMux, dimana kita bisa menambahkan route ke dalam Router
+- Kelebihan dibandingkan dengan ServeMux adalah, pada Router, kita bisa menentukan HTTP Method yang ingin kita gunakan, misal GET, POST, PUT, dan lain lain
+- Cara menambahkan route ke dalam Router adalah gunakan function yang sama dengan HTTP Methodnya, misal router.GET(), router.POST(), dan lain-lain
+
+httprouter.Handle
+- Saat kita menggunakan ServeMux, ketika menambah route, kita bisa menambahkan http.Handler
+- Berbeda dengan Router, pada Router kita tidak menggunakan http.Handler lagi, melainkan menggunakan type httprouter.Handle
+- Perbedaan dengan http.Handler adalah, pada httprouter.Handle, terdapat parameter ke tiga yaitu Params.
+[Note Begin]
+Handle is a function that can be registered to a route to handle HTTP requests.
+Like http.HandlerFunc, but has a third parameter for the values of wildcards(variables)
+type Handle func(http.ResponseWriter, *http.Request, Params)
+[Note End]
