@@ -66,3 +66,9 @@ Bagian 5. Panic Handler
 - Kadang saat terjadi panic, kita ingin melakukan sesuatu, misal memberitahu jika terjadi kesalahan di web, atau bahkan mengirim informasi log kesalahan yang terjadi 
 - Seperti yang sudah dibahas dimateri golang web, jika kita ingin menangani panic, kita harus membuat middleware khusus secara manual
 - Namun di Router, sudah disediakan untuk menangani panic, caranya dengan menggunakan attribute PanicHandler: func (http.ResponseWriter, *http.Request, interface{})
+
+Bagian 6. Not Found Handler
+- Selain panic Handler, Router juga memiliki not found Handler
+- Not found handler adalah handler yang dieksekusi ketika client mencoba melakukan request URL yang memang tidak terdapat di Router
+- Secara default, jika tidak ada route tidak ditemukan, Router akan melanjutkan request ke http.NotFound, namun kita bisa mengubahnya
+- Caranya dengan mengubah router.NotFound = http.Handler
