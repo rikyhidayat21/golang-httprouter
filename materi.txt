@@ -79,3 +79,7 @@ Bagian 7. Method not allowed
 - Maka akan terjadi Error MEthod not allowed
 - Secar default, jika terjadi error seperti ini, maka Router akan memanggil function http.Error
 - Jika kita ingin mengubahnya, kita bisa menggunakan router.MethodNotAllowed = http.Handler
+
+Bagian 8. middleware
+- HttpRouter hanyalah library untuk http router saja, tidak ada fitur lain selain http router
+- Dan karena router merupakan implementasi dari http.Handler, jadi untuk middleware, kita bisa membuat sendiri, seperti yang sudah kita bahas di course golang web
