@@ -72,3 +72,10 @@ Bagian 6. Not Found Handler
 - Not found handler adalah handler yang dieksekusi ketika client mencoba melakukan request URL yang memang tidak terdapat di Router
 - Secara default, jika tidak ada route tidak ditemukan, Router akan melanjutkan request ke http.NotFound, namun kita bisa mengubahnya
 - Caranya dengan mengubah router.NotFound = http.Handler
+
+Bagian 7. Method not allowed
+- Saat menggunakan ServeMux, kita tidak bisa menentukan HTTP Method apa yang digunakan untuk handler
+- Namun pada Router, kita bisa menentukan HTTP Method yang ingin kita gunakan, lantas apa yang terjadi jika client tidak mengirim HTTP Method sesuai dengan yang kita tentukan?
+- Maka akan terjadi Error MEthod not allowed
+- Secar default, jika terjadi error seperti ini, maka Router akan memanggil function http.Error
+- Jika kita ingin mengubahnya, kita bisa menggunakan router.MethodNotAllowed = http.Handler
